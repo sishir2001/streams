@@ -15,10 +15,16 @@ class StreamList extends Component {
             // ! how to send id of the stream post that user want to edit and delete
             return (
                 <div className="right floated content">
-                    <Link to={`/streams/edit/${stream.id}`} className="ui button green">
+                    <Link
+                        to={`/streams/edit/${stream.id}`}
+                        className="ui button green"
+                    >
                         Edit
                     </Link>
-                    <Link to={`/streams/delete/${stream.id}`} className="ui button negative">
+                    <Link
+                        to={`/streams/delete/${stream.id}`}
+                        className="ui button negative"
+                    >
                         Delete
                     </Link>
                 </div>
@@ -34,7 +40,9 @@ class StreamList extends Component {
                     {this.renderAdmin(stream)}
                     <i className="large middle aligned icon camera" />
                     <div className="content">
-                        <div className="header">{stream.title}</div>
+                        <Link className="header" to={`/streams/${stream.id}`}>
+                            <div className="header">{stream.title}</div>
+                        </Link>
                         <div className="description">{stream.description}</div>
                     </div>
                 </div>
